@@ -11,9 +11,10 @@ import java.text.SimpleDateFormat;
 import java.util.Locale;
 
 public class VariableJavaActivity extends AppCompatActivity {
-    TextView txtActivityStartTime, txtCountBtnClicks;
+    TextView txtActivityStartTime, txtCountBtnClicks, txtElapsedTime;
     Button btnClickMe;
     final long startTime = System.currentTimeMillis();
+    long elapsedSeconds;
 
     int clickCount = 0;
 
@@ -24,6 +25,7 @@ public class VariableJavaActivity extends AppCompatActivity {
 
         txtActivityStartTime = findViewById(R.id.txtActivityStartTime);
         txtCountBtnClicks = findViewById(R.id.txtCountBtnClicks);
+        txtElapsedTime= findViewById(R.id.txtElapsedTime);
         btnClickMe = findViewById(R.id.btnClickMe);
 
         btnClickMe.setOnClickListener(new View.OnClickListener() {
@@ -31,9 +33,12 @@ public class VariableJavaActivity extends AppCompatActivity {
             public void onClick(View view) {
                 clickCount++;
                 txtCountBtnClicks.setText("Button clicks: " + clickCount);
+                elapsedSeconds = (long) ((System.currentTimeMillis() - startTime) / 1000);
+                txtElapsedTime.setText(elapsedSeconds+"seconds elpased");
             }
         });
-        String timeText = new SimpleDateFormat("HH:mm:ss", Locale.KOREA).format(startTime);
+        String timeText = new SimpleDateFormat("HH:mm:ss").format(startTime);
+
         txtActivityStartTime.setText("Activity start time = " + timeText);
         txtCountBtnClicks.setText("Ready to start counting clicks");
     }
