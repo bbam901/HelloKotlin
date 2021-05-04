@@ -10,11 +10,11 @@
         android:id="@+id/btnJava"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="572dp"
+        android:layout_marginTop="111dp"
         android:text="VIEW BINDING - JAVA"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnKotlin"
@@ -30,21 +30,40 @@
         android:id="@+id/btnVarJava"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="8dp"
         android:text="VARIABLE - JAVA"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnKotlin" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnVarKotlin"
+        app:layout_constraintEnd_toStartOf="@+id/btnVarKotlin"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnVarKotlin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="23dp"
-        android:layout_marginBottom="289dp"
+        android:layout_marginBottom="290dp"
         android:text="VARIABLE - KOTLIN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnVarJava" />
+        app:layout_constraintStart_toEndOf="@+id/btnVarJava" />
+
+    <Button
+        android:id="@+id/btnFlowControlJava"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="39dp"
+        android:text="FlowControl-J"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnVarJava" />
+
+    <Button
+        android:id="@+id/btnFlowControlKotlin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="22dp"
+        android:text="FlowControl-K"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnFlowControlJava" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
